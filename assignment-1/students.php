@@ -2,55 +2,29 @@
 
 require_once './init.inc.php';
 
+$view = isset($_GET['v']) ? $_GET['v'] : 'view';
+
 
 require_once './layout/header.inc.php';
 require_once './layout/nav.inc.php';
 
-
-
-$students = Student::getAll();
-
 ?>
 
-<div class="container">
+<?php
 
-<a href="./addstudent.php" class="mt-5 btn btn-info btn-block">Add new student</a>
+if ($view == 'view'):
+    require_once DIRS['students-view'];
+elseif($view == 'add'):
+    require_once DIRS['students-add'];
+elseif($view == 'edit'):
+    require_once DIRS['students-edit'];
+elseif($view == 'delete'):
+    require_once DIRS['students-delete'];
+else:
+    header('Location:'.PATH['student-view']);
+endif;
 
-<table class="my-5 table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-
-    <?php
-        foreach( $students as $student ):
-    ?>
-
-        <tr>
-        <th scope="row"><?= $student['id'] ?></th>
-        <td><?= $student['name'] ?></td>
-        <td>
-            <a href="./editstudent.php?id=<?= $student['id'] ?>" class="btn btn-primary">Edit</a>
-            
-            <form action="./deletestudent.php" method="POST" class="d-inline">
-                <input type="hidden" name="studentId" value="<?= $student['id'] ?>">
-                <input type="submit" class="btn btn-danger" value="Delete">
-            </form>
-
-        </td>
-        </tr>
-
-    <?php
-        endforeach;
-    ?>
-
-  </tbody>
-</table>
-</div>
+?>
 
 
 <?php

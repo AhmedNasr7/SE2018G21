@@ -36,8 +36,13 @@ class Course extends Db {
         }
     }
 
-    public static function update($id,$name){
-        $stmt = Db::runQuery('UPDATE `courses` SET name = :studentName WHERE id = :id', [ ':studentName'=> $name,':id' => $id ] );
+    public static function update($id,$name,$max_degree,$study_year){
+        $stmt = Db::runQuery('UPDATE `courses` 
+                                SET name = :studentName, 
+                                max_degree = :max_degree, 
+                                study_year = :study_year 
+                                WHERE id = :id', 
+                                [ ':studentName'=> $name,':id' => $id, ':max_degree' => $max_degree, ':study_year' => $study_year ] );
     }    
 
 
