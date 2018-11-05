@@ -20,6 +20,8 @@ elseif($view == 'edit'):
     require_once DIRS['course-edit'];
 elseif($view == 'delete'):
     require_once DIRS['course-delete'];
+elseif($view == 'search'):
+    require_once DIRS['course-search'];
 else:
     header('Location:'.PATH['courses-view']);
 endif;

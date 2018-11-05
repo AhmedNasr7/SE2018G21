@@ -20,9 +20,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
-      <th scope="col">Max degree</th>
-      <th scope="col">Study year</th>
-      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>

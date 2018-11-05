@@ -36,6 +36,15 @@ class Course extends Db {
         }
     }
 
+    public static function getLike($like){
+        $stmt = Db::runQuery('SELECT * FROM `courses`WHERE name LIKE :name ', [':name'=> '%'.$like.'%'] );
+        if($stmt){
+            return $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }else {
+            throw new Exception("Item not found");
+        }
+    }
+
     public static function update($id,$name,$max_degree,$study_year){
         $stmt = Db::runQuery('UPDATE `courses` 
                                 SET name = :studentName, 

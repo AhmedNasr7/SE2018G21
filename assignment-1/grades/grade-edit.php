@@ -15,6 +15,9 @@ else if($_SERVER['REQUEST_METHOD']=='POST'){
   header('Location:'.PATH['grades-view']);
 }
 
+$students = Student::getAll();
+$courses = Course::getALl();
+
 ?>
 
 <div class="container">
@@ -27,8 +30,24 @@ else if($_SERVER['REQUEST_METHOD']=='POST'){
         <th scope="row"><?= $grade->id ?></th>
         <td>
           <input type="hidden" name="gradeId" value="<?= $grade->id ?>">
-          <input type="text" name="studentId" class="form-control" value="<?= $grade->student_id ?>">
-          <input type="text" name="courseId" class="form-control" value="<?= $grade->course_id ?>">
+          <select name="studentId" class="form-control">
+            <?php
+                foreach($students as $student):
+            ?>
+                <option value="<?= $student['id'] ?>" <?php echo ( ($student['id']==$grade->student_id)? 'selected' : '' ); ?> > <?= $student['name'] ?> </option>
+            <?php
+                endforeach;
+            ?>
+          </select>
+          <select name="courseId" class="form-control">
+            <?php
+                foreach($courses as $course):
+            ?>
+                <option value="<?= $course['id'] ?>" <?php echo ( ($course['id']==$grade->course_id)? 'selected' : '' ); ?> > <?= $course['name'] ?> </option>
+            <?php
+                endforeach;
+            ?>
+          </select>
           <input type="text" name="degree" class="form-control" value="<?= $grade->degree ?>">
           <input type="date" name="date" class="form-control" value="<?= $grade->examine_at ?>">
         </td>

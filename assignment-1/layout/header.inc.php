@@ -5,6 +5,6 @@
     <title>School Information System</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= DIRS['css-bootstrap-file'] ?>" rel="stylesheet">
   </head>
-  <body>
+  <body class="pb-3">

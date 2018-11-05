@@ -7,8 +7,10 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <!-- <script src="./static/js/jquery.min.js">
-    <script src="./static/js/bootstrap.min.js"></script> -->
-    <!-- <script src="./static/js/script.js"></script> -->
+    
+    <script src="<?= DIRS['js-jquery-file'] ?>" ></script>
+    <script src="<?= DIRS['js-bootstrap-file'] ?>" ></script>
+    <script src="<?= DIRS['js-script-file'] ?>" ></script>
+
   </body>
 </html>

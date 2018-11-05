@@ -12,26 +12,42 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     header('Location:'.PATH['grades-view']);
 }
 
+$students = Student::getAll();
+$courses = Course::getALl();
+
 ?>
 
 <div class="container">
 <table class="my-5 table table-striped">
   <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Student Id</th>
-      <th scope="col">Course Id</th>
-      <th scope="col">Degree</th>
-      <th scope="col">Examine At</th>
-    </tr>
   </thead>
   <tbody>
     <tr>
       <form action=<?= PATH['grade-add'] ?> method="POST">
         <th scope="row">00</th>
         <td>
-          <input type="text" name="studentId" class="form-control" placeholder="student Id">
-          <input type="text" name="courseId" class="form-control" placeholder="course Id">
+          <select name="studentId" class="form-control">
+                <option> SELECT STUDENT </option>
+            <?php
+                foreach($students as $student):
+            ?>
+                <option value="<?= $student['id'] ?>"> <?= $student['name'] ?> </option>
+            <?php
+                endforeach;
+            ?>
+          </select>
+          <select name="courseId" class="form-control">
+                <option> SELECT COURSE </option>
+
+            <?php
+                foreach($courses as $course):
+            ?>
+                <option value="<?= $course['id'] ?>"> <?= $course['name'] ?> </option>
+            <?php
+                endforeach;
+            ?>
+            
+          </select>
           <input type="text" name="degree" class="form-control" placeholder="degree">
           <input type="date" name="date" class="form-control" placeholder="date">
         </td>

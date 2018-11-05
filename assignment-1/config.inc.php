@@ -44,8 +44,10 @@ $var = 5;
     'css-dir' => './static/css',
     'js-dir' => './static/js',
     
-    'js-bootstrap-dir' => './static/js/bootstrap.min.js',
-    'css-bootstrap-dir' => './static/css/bootstrap.min.css',
+    'js-bootstrap-file' => './static/js/bootstrap.min.js',
+    'js-jquery-file' => './static/js/jquery.js',
+    'js-script-file' => './static/js/script.js',
+    'css-bootstrap-file' => './static/css/bootstrap.min.css',
 
 
     'Student-model'     => './models/student.model.php',
@@ -68,6 +70,7 @@ $var = 5;
     'course-add'      => './courses/course-add.php',
     'course-edit'     => './courses/course-edit.php',
     'course-delete'   => './courses/course-delete.php',
+    'course-search'   => './course-search-json.php',
     
 
 

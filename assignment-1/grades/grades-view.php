@@ -11,7 +11,7 @@ $grades = Grade::getAll();
 
 <div class="container">
 
-<a href="<?= PATH['grade-add'] ?>" class="mt-5 btn btn-info btn-block">Add new student</a>
+<a href="<?= PATH['grade-add'] ?>" class="mt-5 btn btn-info btn-block">Add new Grade</a>
 
 <?php
 if(isset($_SESSION['gradeDeleteSuccess'])):
@@ -26,8 +26,8 @@ endif;
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Student Id</th>
-      <th scope="col">Course Id</th>
+      <th scope="col">Student</th>
+      <th scope="col">Course</th>
       <th scope="col">Degree</th>
       <th scope="col">Examine At</th>
     </tr>
@@ -36,12 +36,14 @@ endif;
 
     <?php
         foreach( $grades as $grade ):
+            $student = new Student($grade['student_id']);
+            $course = new Course($grade['course_id']);
     ?>
 
         <tr>
         <th scope="row"><?= $grade['id'] ?></th>
-        <td><?= $grade['student_id'] ?></td>
-        <td><?= $grade['course_id'] ?></td>
+        <td><?= $student->name;?></td>
+        <td><?= $course->name;?></td>
         <td><?= $grade['degree'] ?></td>
         <td><?= $grade['examine_at'] ?></td>
         <td>
