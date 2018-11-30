@@ -1,0 +1,18 @@
+.form-group {
+
+	 width: 300px;
+	 margin: 25px;
+	
+}
+.custom-file{
+	width: 300px;
+	margin: 25px;
+}
+.btn{
+	margin: 25px;
+}
+body
+{
+
+	background-color: #DDDD;
+}
