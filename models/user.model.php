@@ -7,7 +7,7 @@ class User extends DB {
 
         if($id != null){
             
-            $stmt = Db::runQuery('SELECT * FROM `users` WHERE id = :id', [ ':id' => $id ] );
+            $stmt = DB::runQuery('SELECT * FROM `users` as usr WHERE id = :id', [ ':id' => $id ] );
             if($stmt){
                 $data = $stmt->fetch(PDO::FETCH_ASSOC);
                 foreach($data as $key => $value){
@@ -24,16 +24,17 @@ class User extends DB {
     }
 
     public function getById($id){
-        $stmt = Db::runQuery('SELECT * FROM `users` WHERE id = :id', [ ':id' => $id ] );
-        if($stmt){
-            $data = $stmt->fetch(PDO::FETCH_ASSOC);
-            foreach($data as $key => $value){
-                $this->{$key} = $value;
-            }
-            return true;
-        }else {
-            return null;
-        }
+        // $stmt = Db::runQuery('SELECT * FROM `users` WHERE id = :id', [ ':id' => $id ] );
+        // if($stmt){
+        //     $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        //     foreach($data as $key => $value){
+        //         $this->{$key} = $value;
+        //     }
+        //     return true;
+        // }else {
+        //     return null;
+        // }
+        return new User($id);
     }
 
     public function getByUserName($username){
