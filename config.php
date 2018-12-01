@@ -9,6 +9,8 @@ class DIRS {
 
     public const URL = [
         'home-page' =>'./index.php',
+
+        'doctor-profile' => './dr.php',
     ];
 
     public const PATH = [
@@ -32,6 +34,13 @@ class DIRS {
         'views-layout-header' => './views/layout/header.inc.php',
         'views-layout-footer' => './views/layout/footer.inc.php',
         'views-layout-nav' => './views/layout/nav.inc.php',
+
+        /** Dr profile */
+        'static-imgs-dr-avatar' => './static/imgs/dr-avatar.jpg',
+        'views-dr-profile' => './views/doctor-profile/dr-profile.view.php',
+
+
+
 
         /**
          * Models
