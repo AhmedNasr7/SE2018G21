@@ -11,115 +11,38 @@
 
 </head>
 <body>
-	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" >
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-	    <a class="navbar-brand" href="#">Home</a>
-	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-	      <li class="nav-item active">
-	        <a class="nav-link" href="#"> Clinic <span class="sr-only">(current)</span></a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Account</a>
-	      </li>
-	    </ul>
-	    <form class="form-inline my-2 my-lg-0">
-	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-	    </form>
-	  </div>
-	</nav>
 
-	
-	<div class="alert alert-dark" role="alert">
- 		 A simple dark alert—check it out!
-	</div>
-	<!-- the form -->
-	<div class="alltheform">
-
-		<form>
-			<form>
-			  <div class="form-group">
-			    <label for="formGroupExampleInput">Frist name</label>
-			    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-			  </div>
-			  <div class="form-group">
-			    <label for="formGroupExampleInput2">Last name</label>
-			    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-			  </div>
-
-
-		  <div class="form-row">
-		    <div class="form-group col-md-6">
-		      <label for="inputEmail4">Email</label>
-		      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-		   </div>
-		    <div class="form-group col-md-6">
-		      <label for="inputPassword4">Password</label>
-		      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-		    </div>
-		  </div>
-		  <div class="form-group">
-		    <label for="exampleFormControlTextarea1">Specialization</label>
-		    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-		  </div>
-		   <div class="form-group">
-		    <label for="exampleFormControlTextarea1">Your previous experience</label>
-		    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-		  </div>
-		  <div class="form-group">
-		    <label for="exampleFormControlTextarea1">Your sud</label>
-		    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-		  </div>
-
-		   <div class="form-group">
-		    <label for="inputAddress">Address of clinic</label>
-		    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-		  </div>
-
-		  <div class="form-group">
-		    <label for="inputAddress2">Address 2</label>
-		    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-		  </div>
-		  <div class="form-group">
-		    <label for="inputAddress">telphone number of clinc</label>
-		    <input type="text" class="form-control" id="inputAddress"  placeholder="022***">
-		  </div>
-		  <div class="form-group">
-		    <label for="inputAddress">email of clinic</label>
-		    <input type="text" class="form-control" id="inputAddress" >
-		  </div>
-		  <div class="form-row">
-		    <div class="form-group col-md-6">
-		      <label for="inputCity">City</label>
-		      <input type="text" class="form-control" id="inputCity">
-		    </div>
-		    <div class="form-group col-md-4">
-		      <label for="inputState">State</label>
-		      <select id="inputState" class="form-control">
-		        <option selected>Choose...</option>
-		        <option>...</option>
-		      </select>
-		    </div>
-		    <div class="form-group col-md-2">
-		      <label for="inputZip">Zip</label>
-		      <input type="text" class="form-control" id="inputZip">
-		    </div>
-		  </div>
-		  
-		  
-
-		    <div class="custom-file">
-			  <input type="file" class="custom-file-input" id="customFile">
-			  <label class="custom-file-label" for="customFile">Upload your cv</label>
-		    </div>
-		    <button type="submit" class="btn btn-primary">submit</button>
-		</form>
- 	</div>
+	<div class="alert alert-light" role="alert">
 
 
 
+ 		<div id="signup-form" class="collapse show">
+         	  <form action="./signup-login.php" method="POST">
+                     <input type="hidden" name="type" value="creat-clinic">
+                     		<div class="form-group">
+                                <label for="name">name of clinic</label>
+                                <input name="neme" type="text" class="form-control shadow-sm bg-white border-0" id="name-of-clinic" aria-describedby="emailHelp" placeholder="Enter name of clinic">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email of clinic</label>
+                                <input name="email" type="email" class="form-control shadow-sm bg-white border-0" id="email-of-clinic" aria-describedby="emailHelp" placeholder="Enter email of clinic">
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address of clinic</label>
+                                <input name="address" type="text" class="form-control shadow-sm bg-white border-0" id="Address-of-clinic" aria-describedby="emailHelp" placeholder="Enter Address">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">phone number of clinc</label>
+                                <input name="phone" type="text" class="form-control shadow-sm bg-white border-0" id="phone-of-clinic" placeholder="telphone number">
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+               </form>
+         </div>
+     </div>  
+
+        
+         	
 </body>
 </html>
