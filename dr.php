@@ -9,5 +9,17 @@
 
 require_once './init.php';
 
-/** Demo only */
-require_once DIRS::PATH['views-dr-profile'];
+
+
+$page =  $_GET['v'] ? $_GET['v'] : 'view';
+
+if($page == 'edit'):
+
+    require_once DIRS::PATH['views-dr-edit-profile'];
+
+else :
+    /** else $page == view */
+
+    require_once DIRS::PATH['views-dr-profile'];
+
+endif;

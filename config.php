@@ -10,7 +10,8 @@ class DIRS {
     public const URL = [
         'home-page' =>'./index.php',
 
-        'doctor-profile' => './dr.php',
+        'doctor-profile' => './dr.php?v=view',
+        'doctor-edit-profile' => './dr.php?v=edit',
     ];
 
     public const PATH = [
@@ -35,9 +36,11 @@ class DIRS {
         'views-layout-footer' => './views/layout/footer.inc.php',
         'views-layout-nav' => './views/layout/nav.inc.php',
 
+
         /** Dr profile */
         'static-imgs-dr-avatar' => './static/imgs/dr-avatar.jpg',
         'views-dr-profile' => './views/doctor-profile/dr-profile.view.php',
+        'views-dr-edit-profile' => './views/doctor-profile/edit-profile.view.php',
 
 
 
