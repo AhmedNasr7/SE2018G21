@@ -5,6 +5,13 @@ const DB_DBNAME = 'health-tech';
 const DB_USERNAME = 'root';
 const DB_PASSWORD = '';
 
+/** Online DB config
+* const DB_HOST = 'db4free.net';
+*const DB_DBNAME = 'healthtech';
+*const DB_USERNAME = 'se2018g21';
+*const DB_PASSWORD = 'se2018g21Healthtech';
+ */
+
 class DIRS {
 
     public const URL = [

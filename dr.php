@@ -19,7 +19,7 @@ if($page == 'edit'):
 
 else :
     /** else $page == view */
-
+    
     require_once DIRS::PATH['views-dr-profile'];
 
 endif;
