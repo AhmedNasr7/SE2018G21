@@ -1,5 +1,13 @@
 <div class="container mt-5">
-
+    <?php
+    if(isset($_SESSION['success_updatet'])):
+            if($_SESSION['success_updatet']):
+    ?>
+                <div class="alert alert-success">Updated</div>
+    <?php
+        unset($_SESSION['success_updatet']);
+    endif; endif;
+    ?>
     <div class="card border-0">
         <div class="card-body">
             <h5 class="card-title">Public Profile</h5>
@@ -9,22 +17,22 @@
     
     <div class="card border-0">
         <div class="card-body">
-            <form action="" method="POST"> <!-- User and Profile tables  ||| action to dr.php controller -->
+            <form action="./dr.php?v=edit" method="POST"> <!-- User and Profile tables  ||| action to dr.php controller -->
                 <div class="form-group">
                     <label class="card-title">First name</label>
-                    <input type="text" name="first_name" class="form-control" value="">
+                    <input type="text" name="first_name" class="form-control" value="<?= $profile->first_name ?>">
                 </div>
                 <div class="form-group">
                     <label class="card-title">Last name</label>
-                    <input type="text" name="last_name" class="form-control">
+                    <input type="text" name="last_name" class="form-control" value="<?= $profile->last_name ?>">
                 </div>
                 <div class="form-group">
-                    <label class="card-title">Email</label>
-                    <input type="text" name="usermail" class="form-control">
+                    <label class="card-title">Address</label>
+                    <input type="text" name="address" class="form-control" value="<?= $profile->address ?>">
                 </div>
                 <div class="form-group">
                     <label class="card-title">Phone</label>
-                    <input type="text" name="phone" class="form-control">
+                    <input type="text" name="phone" class="form-control" value="<?= $profile->phone ?>">
                 </div>
                 <div class="form-group">
                     <label class="card-title">Gender</label>
