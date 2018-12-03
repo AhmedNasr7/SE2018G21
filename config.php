@@ -44,11 +44,6 @@ class DIRS {
         'views-layout-footer' => './views/layout/footer.inc.php',
         'views-layout-nav' => './views/layout/nav.inc.php',
 
-
-        /**
-            Home
-        */
-
         'views-home' => './views/home.php',
 
         /** Dr profile */
@@ -68,7 +63,8 @@ class DIRS {
          */
         'models-DB'=>'./models/db.model.php',
         'models-user' => './models/user.model.php',
-        'models-profile' => './models/profile.model.php'
+        'models-profile' => './models/profile.model.php',
+        'models-dr-clinic-rel' => './models/dr-clinic-rel.model.php',
 
     ];
 
@@ -77,3 +73,5 @@ class DIRS {
 
 require_once DIRS::PATH['models-DB'];
 require_once DIRS::PATH['models-user'];
+require_once DIRS::PATH['models-profile'];
+require_once DIRS::PATH['models-dr-clinic-rel'];
