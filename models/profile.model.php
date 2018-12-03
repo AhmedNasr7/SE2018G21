@@ -7,9 +7,9 @@ class Profile extends DB{
 	function __construct($userid = null){
 
 
-        if($id != null){
+        if($userid != null){
             
-            $stmt = DB::runQuery('SELECT * FROM `profile`  WHERE userid = :userid', [ ':userid' => $user_id ] );
+            $stmt = DB::runQuery('SELECT * FROM `profile`  WHERE user_id = :userid', [ ':userid' => $userid ] );
             if($stmt){
                 $data = $stmt->fetch(PDO::FETCH_ASSOC);
                 foreach($data as $key => $value){
@@ -25,23 +25,30 @@ class Profile extends DB{
 
     }
 
-    public function getById($userid){
-     
-        return new Pat_Profile($userid);
+    public static function getByUserId($userid){
+    
+        return new Profile($userid);
     }
 
-    public static function create($firstname,$lastname,$address,$phone,$birhtday,$gender,$drmajor){
+    public static function create($firstname,$lastname,$address,$phone,$birhtday,$gender,$user_id,$drmajor=null){
 
-    	$stmt = DB::runQuery('INSERT INTO `profile` (first_name,last_name,address,phone,birth_day,gender,dr_major) VALUES (:first_name,:last_name,:address,:phone,:birth_day,:gender,:dr_major)' , [ ':first_name' => $firstname, ':last_name' => $lastname ,':address' => $address, ':phone' => $phone, ':birth_day' => $birhtday, ':gender' => $gender,':dr_major' => $dr_major ]);
-
-
+        $stmt = DB::runQuery('INSERT INTO `profile` (first_name,last_name,address,phone,birth_day,gender,user_id,dr_major) VALUES (:first_name,:last_name,:address,:phone,:birth_day,:gender,:userid,:dr_major)' , [ ':first_name' => $firstname, ':last_name' => $lastname ,':address' => $address, ':phone' => $phone, ':birth_day' => $birhtday, ':gender' => $gender, ':userid'=>$userid ,':dr_major' => $dr_major ]);
+        if($stmt){
+            return new Profile( DB::$con->lastInsertId() );
+        }else {
+            return null;
+        }
     }
 
-    public static function edit($userid,$firstname,$lastname,$address,$phone,$birhtday,$gender,$drmajor){
+    public static function update($userid,$firstname,$lastname,$address,$phone,$birhtday,$gender,$dr_major=null){
 
-    	$stmt = DB::runQuery('UPDATE `profile` SET first_name = :first_name , last_name = :last_name , address = :address , phone = :phone , birth_day = :birth_day , gender = :gender , dr_major = :dr_major Where user_id = :userid' , [ ':first_name' => $firstname, ':last_name' => $lastname ,':address' => $address, ':phone' => $phone, ':birth_day' => $birhtday, ':gender' => $gender,':dr_major' => $dr_major , ':userid' => $userid ]);
-
-
+        $stmt = DB::runQuery('UPDATE `profile` SET first_name = :first_name , last_name = :last_name , address = :address , phone = :phone , birth_day = :birth_day , gender = :gender , dr_major = :dr_major Where user_id = :userid' , 
+                            [ ':first_name' => $firstname, ':last_name' => $lastname ,':address' => $address, ':phone' => $phone, ':birth_day' => $birhtday, ':gender' => $gender,':dr_major' => $dr_major , ':userid' => $userid ]);
+        if($stmt){
+            return true;
+        }else {
+            return null;
+        }
     }
 
 }
