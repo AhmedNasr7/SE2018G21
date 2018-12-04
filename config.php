@@ -53,6 +53,8 @@ class DIRS {
         'views-patient-profile' => './views/patient-profile/pat-profile.view.php',
         'static-js-pat-profile' => './static/js/patient-profile/pat.js',
         'static-css-pat-profile' => './static/css/patient-profile/pat.css',
+        'static-imgs-pat-avatar' => './static/imgs/pat-avatar.png',
+        'static-imgs-clinic-logo' => './static/imgs/clinic-logo.png',
 
 
 
@@ -61,7 +63,7 @@ class DIRS {
          */
         'models-DB'=>'./models/db.model.php',
         'models-user' => './models/user.model.php',
-        'models-profile' => './models/profile.model.php'
+        'models-profile' => './models/profile.model.php',
 
     ];
 

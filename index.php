@@ -19,7 +19,7 @@ require_once './init.php';
 
 <div class="container-fluid px-0">
     <?php
-        require_once './home.php';
+        require_once DIRS::PATH['views-home'];
     ?>
 </div>
 
