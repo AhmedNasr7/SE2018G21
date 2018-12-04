@@ -7,20 +7,18 @@
                     <div class="img-thumbnail border-0">
                         <img class="w-25 my-5 mx-auto d-block shadow-sm rounded-circle" src="<?= DIRS::PATH['static-imgs-dr-avatar'] ?>" alt="Dr-Avatar">
                     </div>
-                    <h2><small>Dr-</small>Full Name</h2>
+                    <h2><small>Dr-</small><?= $profile->first_name . " " . $profile->last_name  ?></h2>
                     <div class="btn-group">
-                        <a href="#" class="btn btn-info"> Edit Public Info </a> <!-- link to edit profile page "Anss task"-->
+                        <a href="./dr.php?v=edit" class="btn btn-info"> Edit Public Info </a> <!-- link to edit profile page "Anss task"-->
                         <a href="#" class="btn btn-primary"> Add/Join Clinic </a> <!-- link to clinics page "Ahmed nasr task"-->
                     </div>
                 </div>
 
                 <div class="col-12 col-lg-12">
                     <ul class="list-group list-group-flush text-center"> <!-- From table user and profile -->
-                        <li class="list-group-item">@username</li>
-                        <li class="list-group-item">0101632993</li>
-                        <li class="list-group-item">21 sep 1997</li>
-                        <li class="list-group-item">male</li>
-                        <li class="list-group-item">Department hena</li> <!-- From table Majors """ keep it static now """ -->
+                        <li class="list-group-item"><?= $profile->phone ?></li>
+                        <li class="list-group-item"><?php if($profile->gender): echo "male"; else: echo "female"; endif; ?></li>
+                        <li class="list-group-item">Department</li> <!-- From table Majors """ keep it static now """ -->
                     </ul>
                 </div>
                 <div class="col-12 col-lg-12 mt-2">
@@ -29,24 +27,17 @@
                         <h6 class="card-subtitle mb-2 text-muted">You can add or join or delete clinics</h6>
                     </div>
                     <div class="row">
-                        <div class="col-6 p-2">
+                        <div class="col-12 p-2">
                             <ul class="list-group text-center">
-                                <a href="#" class="list-group-item rounded border-0  mb-2 text-white" style="background-color:#2ecc71;">
-                                    Clinic A Title
-                                </a>
-                                <a href="#" class="list-group-item rounded border-0  mb-2 text-white" style="background-color:#e74c3c;">
-                                    Clinic B Title
-                                </a>
-                            </ul>
-                        </div>
-                        <div class="col-6 p-2">
-                            <ul class="list-group text-center">
-                                <a href="#" class="list-group-item rounded border-0 mb-2 text-white" style="background-color:#1abc9c;">
-                                    Clinic C Title
-                                </a>
-                                <a href="#" class="list-group-item rounded border-0  mb-2 text-white" style="background-color:#9b59b6;">
-                                    Clinic D Title
-                                </a>
+                                <?php
+                                    foreach($clinics as $clinic):
+                                ?>
+                                    <a href="#" class="list-group-item rounded border-0  mb-2 text-white" style="background-color:#2ecc71;">
+                                        <?= $clinic['name'] ?>
+                                    </a>
+                                <?php
+                                    endforeach;
+                                ?>
                             </ul>
                         </div>
                     </div>

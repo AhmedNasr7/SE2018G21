@@ -5,6 +5,13 @@ const DB_DBNAME = 'health-tech';
 const DB_USERNAME = 'root';
 const DB_PASSWORD = '';
 
+/** Online DB config
+* const DB_HOST = 'db4free.net';
+*const DB_DBNAME = 'healthtech';
+*const DB_USERNAME = 'se2018g21';
+*const DB_PASSWORD = 'se2018g21Healthtech';
+ */
+
 class DIRS {
 
     public const URL = [
@@ -37,11 +44,6 @@ class DIRS {
         'views-layout-footer' => './views/layout/footer.inc.php',
         'views-layout-nav' => './views/layout/nav.inc.php',
 
-
-        /**
-            Home
-        */
-
         'views-home' => './views/home.php',
 
         /** Dr profile */
@@ -64,6 +66,10 @@ class DIRS {
         'models-DB'=>'./models/db.model.php',
         'models-user' => './models/user.model.php',
         'models-profile' => './models/profile.model.php',
+<<<<<<< HEAD
+=======
+        'models-dr-clinic-rel' => './models/dr-clinic-rel.model.php',
+>>>>>>> 1ea6174adac889d7d1e03691371cbddd24404e6a
 
     ];
 
@@ -72,3 +78,5 @@ class DIRS {
 
 require_once DIRS::PATH['models-DB'];
 require_once DIRS::PATH['models-user'];
+require_once DIRS::PATH['models-profile'];
+require_once DIRS::PATH['models-dr-clinic-rel'];
