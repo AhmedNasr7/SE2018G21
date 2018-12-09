@@ -15,41 +15,67 @@ $page =  isset($_GET['v']) ? $_GET['v'] : 'view';
 
 
 if($page == 'edit'):
+    /**
+     * Edit page /dr.php?v=edit
+     * 
+     */
     if($_SESSION['loggedinUser']->acc_type == 1):
 
-        if($_SERVER['REQUEST_METHOD']=='POST'){
-            $user = $_SESSION['loggedinUser'];
+        if($_SERVER['REQUEST_METHOD']=='POST'){ /** Get Updated data from post request */
+            $user = $_SESSION['loggedinUser']; /** Capture logged in user */
             Profile::update($user->id , $_POST['first_name'],$_POST['last_name'],$_POST['address'],$_POST['phone'],null,$_POST['gender'],null);
             $_SESSION['success_updatet'] = true;
-            header('Location:' . DIRS::URL['doctor-edit-profile']);
-        }
+            header('Location:' . DIRS::URL['doctor-profile'].'&drid='.$_SESSION['loggedinUser']->id);
+        } 
+        /** if no POST request -> View edit page */
         $user =  $_SESSION['loggedinUser'];
         $profile = Profile::getByUserId($user->id);
+<<<<<<< HEAD
         require_once DIRS::PATH['views-edit-profile'];
+=======
+        if(empty((array)$profile)){
+            $profile = Profile::create('','','','','','',$user->id,null);
+        }
+        $profile = Profile::getByUserId($user->id);
+        require_once DIRS::PATH['views-dr-edit-profile'];
+>>>>>>> f34f4cdc1ba8f6a383f8cb527270fa8dc7ddc596
 
     endif;
 else :
     /** else $page == view */
 
     if(!isset($_GET['drid'])){
+<<<<<<< HEAD
         echo "No such doctor with this";
+=======
+        echo "No such Fucking Doctor with this ID go Fuck your self";
+>>>>>>> f34f4cdc1ba8f6a383f8cb527270fa8dc7ddc596
     }else{
 
-        $user = new User($_GET['drid']);
+        $dr = new User($_GET['drid']);
 
-        if($user->acc_type == 0){
+        if($dr->acc_type == 0){
+            /**
+             * Error meesage with no doctor with this ID
+             */
             header('Location:'.DIRS::URL['home-page']);
         }
 
-        $profile = Profile::getByUserId($user->id);
+        $profile = Profile::getByUserId($dr->id);
+
+        if(empty((array)$profile)){
+            header('Location:'.DIRS::URL['doctor-edit-profile']);
+        }
     
-        $clinics_ids = DrToClinics::getClinicsOfDrs($user->id);
+        $clinics_ids = DrToClinics::getClinicsOfDrs($dr->id);
 
         $clinics = [];
 
-        foreach( $clinics_ids as $drToClinic ){
-            array_push($clinics, DrToClinics::getClinicById($drToClinic['clinic_id']) );
+        foreach( $clinics_ids as $clinicID ){
+            array_push($clinics, DrToClinics::getClinicById($clinicID['clinic_id']) );
         }
+
+        $drAppointments = Appointment::getByDrId($dr->id);
     
         require_once DIRS::PATH['views-dr-profile'];
     }

@@ -10,13 +10,13 @@ class Profile extends DB{
         if($userid != null){
             
             $stmt = DB::runQuery('SELECT * FROM `profile`  WHERE user_id = :userid', [ ':userid' => $userid ] );
-            if($stmt){
+            if($stmt->rowCount() > 0){
                 $data = $stmt->fetch(PDO::FETCH_ASSOC);
                 foreach($data as $key => $value){
                     $this->{$key} = $value;
                 }
             }else {
-                throw new Exception("Item not found");
+                return null;
             }
 
         }else {
@@ -30,9 +30,9 @@ class Profile extends DB{
         return new Profile($userid);
     }
 
-    public static function create($firstname,$lastname,$address,$phone,$birhtday,$gender,$user_id,$drmajor=null){
+    public static function create($firstname,$lastname,$address,$phone,$birhtday,$gender,$user_id,$dr_major=null){
 
-        $stmt = DB::runQuery('INSERT INTO `profile` (first_name,last_name,address,phone,birth_day,gender,user_id,dr_major) VALUES (:first_name,:last_name,:address,:phone,:birth_day,:gender,:userid,:dr_major)' , [ ':first_name' => $firstname, ':last_name' => $lastname ,':address' => $address, ':phone' => $phone, ':birth_day' => $birhtday, ':gender' => $gender, ':userid'=>$userid ,':dr_major' => $dr_major ]);
+        $stmt = DB::runQuery('INSERT INTO `profile` (first_name,last_name,address,phone,birth_day,gender,user_id,dr_major) VALUES (:first_name,:last_name,:address,:phone,:birth_day,:gender,:userid,:dr_major)' , [ ':first_name' => $firstname, ':last_name' => $lastname ,':address' => $address, ':phone' => $phone, ':birth_day' => $birhtday, ':gender' => $gender, ':userid'=>$user_id ,':dr_major' => $dr_major ]);
         if($stmt){
             return new Profile( DB::$con->lastInsertId() );
         }else {

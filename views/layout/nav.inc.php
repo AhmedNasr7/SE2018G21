@@ -9,9 +9,28 @@
     <div class="collapse navbar-collapse" id="main-nav-bar">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href=".">Home</a>
+          <a class="nav-link" href="./">Home</a>
         </li>
+      </ul>
 
+      <ul class="navbar-nav ml-auto">
+        <?php
+          if(isset($_SESSION['loggedinUser'])):
+        ?>
+          <li class="nav-item active">
+            <a class="nav-link" href="<?php if( $_SESSION['loggedinUser']->acc_type==1){ echo DIRS::URL['doctor-profile'].'&drid='.$_SESSION['loggedinUser']->id; } ?>">Profile</a>
+          </li>
+        <?php
+          else:
+        ?> 
+
+          <li class="nav-item active">
+            <span><a class="nav-link d-inline" href="#">login</a> or <a class="nav-link d-inline" href="#">Signup</a></span>
+          </li>
+
+        <?php
+          endif;
+        ?>
       </ul>
     </div>
   </div>
