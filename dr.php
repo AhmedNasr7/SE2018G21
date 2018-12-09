@@ -11,7 +11,7 @@ require_once './init.php';
 
 
 
-$page =  $_GET['v'] ? $_GET['v'] : 'view';
+$page =  isset($_GET['v']) ? $_GET['v'] : 'view';
 
 
 if($page == 'edit'):
@@ -25,14 +25,14 @@ if($page == 'edit'):
         }
         $user =  $_SESSION['loggedinUser'];
         $profile = Profile::getByUserId($user->id);
-        require_once DIRS::PATH['views-dr-edit-profile'];
+        require_once DIRS::PATH['views-edit-profile'];
 
     endif;
 else :
     /** else $page == view */
 
     if(!isset($_GET['drid'])){
-        echo "No such doctor with this id go fuck your self";
+        echo "No such doctor with this";
     }else{
 
         $user = new User($_GET['drid']);

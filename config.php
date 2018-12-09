@@ -19,6 +19,9 @@ class DIRS {
 
         'doctor-profile' => './dr.php?v=view',
         'doctor-edit-profile' => './dr.php?v=edit',
+
+        'patient-profile' => './pat.php?v=view',
+        'patient-edit-profile' => './pat.php?v=edit',
     ];
 
     public const PATH = [
@@ -49,7 +52,10 @@ class DIRS {
         /** Dr profile */
         'static-imgs-dr-avatar' => './static/imgs/dr-avatar.jpg',
         'views-dr-profile' => './views/doctor-profile/dr-profile.view.php',
-        'views-dr-edit-profile' => './views/doctor-profile/edit-profile.view.php',
+
+
+        /** Edit Profiles */
+        'views-edit-profile' => './views/edit-profile/edit-profile.view.php',
 
         /** Patient Profile */
         'views-patient-profile' => './views/patient-profile/pat-profile.view.php',
@@ -66,10 +72,10 @@ class DIRS {
         'models-DB'=>'./models/db.model.php',
         'models-user' => './models/user.model.php',
         'models-profile' => './models/profile.model.php',
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
         'models-dr-clinic-rel' => './models/dr-clinic-rel.model.php',
->>>>>>> 1ea6174adac889d7d1e03691371cbddd24404e6a
+//>>>>>>> 1ea6174adac889d7d1e03691371cbddd24404e6a
 
     ];
 
