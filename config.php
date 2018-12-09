@@ -58,7 +58,7 @@ class DIRS {
         /** Dr profile */
         'static-imgs-dr-avatar' => './static/imgs/dr-avatar.jpg',
         'views-dr-profile' => './views/doctor-profile/dr-profile.view.php',
-        'views-edit-profile' => './views/edit-profile/edit-profile.view.php',
+        'views-dr-edit-profile' => './views/edit-profile/edit-profile.view.php',
 
         /** Edit Profiles */
         'views-edit-profile' => './views/edit-profile/edit-profile.view.php',
