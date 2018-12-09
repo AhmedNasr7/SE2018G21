@@ -66,10 +66,10 @@ class DIRS {
         'models-DB'=>'./models/db.model.php',
         'models-user' => './models/user.model.php',
         'models-profile' => './models/profile.model.php',
-<<<<<<< HEAD
-=======
         'models-dr-clinic-rel' => './models/dr-clinic-rel.model.php',
->>>>>>> 1ea6174adac889d7d1e03691371cbddd24404e6a
+        'models-appointment' => './models/appintment.model.php',
+        'models-clinic' => './models/clinic.model.php',
+
 
     ];
 
@@ -80,3 +80,5 @@ require_once DIRS::PATH['models-DB'];
 require_once DIRS::PATH['models-user'];
 require_once DIRS::PATH['models-profile'];
 require_once DIRS::PATH['models-dr-clinic-rel'];
+require_once DIRS::PATH['models-appointment'];
+require_once DIRS::PATH['models-clinic'];
