@@ -30,26 +30,18 @@ if($page == 'edit'):
         /** if no POST request -> View edit page */
         $user =  $_SESSION['loggedinUser'];
         $profile = Profile::getByUserId($user->id);
-<<<<<<< HEAD
-        require_once DIRS::PATH['views-edit-profile'];
-=======
         if(empty((array)$profile)){
             $profile = Profile::create('','','','','','',$user->id,null);
         }
         $profile = Profile::getByUserId($user->id);
         require_once DIRS::PATH['views-dr-edit-profile'];
->>>>>>> f34f4cdc1ba8f6a383f8cb527270fa8dc7ddc596
 
     endif;
 else :
     /** else $page == view */
 
     if(!isset($_GET['drid'])){
-<<<<<<< HEAD
         echo "No such doctor with this";
-=======
-        echo "No such Fucking Doctor with this ID go Fuck your self";
->>>>>>> f34f4cdc1ba8f6a383f8cb527270fa8dc7ddc596
     }else{
 
         $dr = new User($_GET['drid']);
