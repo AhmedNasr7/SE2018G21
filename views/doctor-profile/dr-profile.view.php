@@ -14,7 +14,7 @@
                     ?>
                     <div class="btn-group">
                         <a href="./dr.php?v=edit" class="btn btn-info"> Edit Public Info </a> <!-- link to edit profile page "Anss task"-->
-                        <a href="#" class="btn btn-primary"> Add/Join Clinic </a> <!-- link to clinics page "Ahmed nasr task"-->
+                        <a href="<?= DIRS::URL['clinic-list'] ?>" class="btn btn-primary"> Add/Join Clinic </a> <!-- link to clinics page "Ahmed nasr task"-->
                     </div>
                     <?php
                         endif;
@@ -39,7 +39,7 @@
                                 <?php
                                     foreach($clinics as $clinic):
                                 ?>
-                                    <a href="#" class="list-group-item rounded border-0  mb-2 text-white" style="background-color:#2ecc71;">
+                                    <a href="<?= DIRS::URL['clinic-profile'].'&clinicid='.$clinic['id'] ?>" class="list-group-item rounded border-0  mb-2 text-white" style="background-color:#2ecc71;">
                                         <?= $clinic['name'] ?>
                                     </a>
                                 <?php

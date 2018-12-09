@@ -27,5 +27,31 @@ class Clinic extends DB {
         return new Clinic($id);
     }
 
+    public static function getAll(){
+        $stmt = DB::runQuery('SELECT * FROM `clinics` ORDER BY `id` DESC', [] );
+        if($stmt){
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $data;
+        }else {
+            throw new Exception("Item not found");
+        }
+    }
+
+    public static function addToDb($name,$address,$phone,$description){
+        $stmt = Db::runQuery('INSERT INTO `clinics` (`name`,`description`,`phone`,`address`) values (:name,:desc,:phone,:address)'
+                                , [ ':name'=> $name , ':desc'=>$description , ':phone'=>$phone , ':address'=>$address ] );
+        return DB::$con->lastInsertId();
+    }
+
+    public static function removeById($id){
+        $stmt = Db::runQuery('DELETE FROM `clinics` WHERE id = :id'
+                                , [ ':id'=> $id ] );
+        if($stmt){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 }

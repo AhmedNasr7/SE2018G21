@@ -12,6 +12,12 @@ class DrToClinics extends DB {
         }
     }
 
+    public static function createRel($dr_id,$clinic_id){
+        $stmt = Db::runQuery('INSERT INTO `drs_clinics_rel` (`dr_id`,`clinic_id`) values (:dr_id,:clinic_id)'
+                                , [ ':dr_id'=> $dr_id , ':clinic_id'=>$clinic_id] );
+        return DB::$con->lastInsertId();
+    }
+
     public static function getClinicById($clinicId){
         $stmt = DB::runQuery('SELECT * FROM `clinics`  WHERE id = :id', [ ':id' => $clinicId ] );
         if($stmt){
