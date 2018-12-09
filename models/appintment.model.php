@@ -53,5 +53,14 @@ class Appointment extends DB {
         return DB::$con->lastInsertId();
     }
 
+    public static function removeById($id){
+        $stmt = Db::runQuery('DELETE FROM `appointments` WHERE id = :id'
+                                , [ ':id'=> $id ] );
+        if($stmt){
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }

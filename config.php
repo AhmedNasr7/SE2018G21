@@ -19,6 +19,12 @@ class DIRS {
 
         'doctor-profile' => './dr.php?v=view',
         'doctor-edit-profile' => './dr.php?v=edit',
+
+        /**
+         * Appointment Add - delete POST request urls
+         */
+        'appointment-book' => './appointment.php?action=add',
+        'appointment-delete' => './appointment.php?action=delete'
     ];
 
     public const PATH = [
@@ -82,3 +88,8 @@ require_once DIRS::PATH['models-profile'];
 require_once DIRS::PATH['models-dr-clinic-rel'];
 require_once DIRS::PATH['models-appointment'];
 require_once DIRS::PATH['models-clinic'];
+
+
+
+DB::connect();
+session_start();

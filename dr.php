@@ -25,10 +25,14 @@ if($page == 'edit'):
             $user = $_SESSION['loggedinUser']; /** Capture logged in user */
             Profile::update($user->id , $_POST['first_name'],$_POST['last_name'],$_POST['address'],$_POST['phone'],null,$_POST['gender'],null);
             $_SESSION['success_updatet'] = true;
-            header('Location:' . DIRS::URL['doctor-edit-profile']);
+            header('Location:' . DIRS::URL['doctor-profile'].'&drid='.$_SESSION['loggedinUser']->id);
         } 
         /** if no POST request -> View edit page */
         $user =  $_SESSION['loggedinUser'];
+        $profile = Profile::getByUserId($user->id);
+        if(empty((array)$profile)){
+            $profile = Profile::create('','','','','','',$user->id,null);
+        }
         $profile = Profile::getByUserId($user->id);
         require_once DIRS::PATH['views-dr-edit-profile'];
 
@@ -50,6 +54,10 @@ else :
         }
 
         $profile = Profile::getByUserId($dr->id);
+
+        if(empty((array)$profile)){
+            header('Location:'.DIRS::URL['doctor-edit-profile']);
+        }
     
         $clinics_ids = DrToClinics::getClinicsOfDrs($dr->id);
 

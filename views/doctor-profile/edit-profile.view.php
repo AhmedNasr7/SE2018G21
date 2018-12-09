@@ -20,30 +20,30 @@
             <form action="./dr.php?v=edit" method="POST"> <!-- User and Profile tables  ||| action to dr.php controller -->
                 <div class="form-group">
                     <label class="card-title">First name</label>
-                    <input type="text" name="first_name" class="form-control" value="<?= $profile->first_name ?>">
+                    <input type="text" name="first_name" class="form-control" value="<?= $profile->first_name ?>" required>
                 </div>
                 <div class="form-group">
                     <label class="card-title">Last name</label>
-                    <input type="text" name="last_name" class="form-control" value="<?= $profile->last_name ?>">
+                    <input type="text" name="last_name" class="form-control" value="<?= $profile->last_name ?>" required>
                 </div>
                 <div class="form-group">
                     <label class="card-title">Address</label>
-                    <input type="text" name="address" class="form-control" value="<?= $profile->address ?>">
+                    <input type="text" name="address" class="form-control" value="<?= $profile->address ?>" required>
                 </div>
                 <div class="form-group">
                     <label class="card-title">Phone</label>
-                    <input type="text" name="phone" class="form-control" value="<?= $profile->phone ?>">
+                    <input type="text" name="phone" class="form-control" value="<?= $profile->phone ?>" required>
                 </div>
                 <div class="form-group">
                     <label class="card-title">Gender</label>
-                    <select name="gender" class="form-control">
+                    <select name="gender" class="form-control" required>
                         <option value="1">Male</option>
                         <option value="0">Female</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="card-title">Major</label> <!-- majors table -->
-                    <select name="dr_major" class="form-control">
+                    <select name="dr_major" class="form-control" required>
                         <option value="0">طبيب بتنجان</option> <!-- Values = major id -->
                         <option value="1">طبيب عيون</option>
                     </select>
