@@ -1,3 +1,4 @@
+
 <div class="container pt-5">
 
 <div class="row justify-content-around">
@@ -7,19 +8,17 @@
                     <div class="img-thumbnail border-0">
                         <img class="w-25 my-5 mx-auto d-block shadow-sm rounded-circle" src="<?= DIRS::PATH['static-imgs-pat-avatar'] ?>" alt="Dr-Avatar">
                     </div>
-                    <h2><small>Patient-</small>Full Name</h2>
+                    <h2><small>Patient-</small><?=$profile->first_name?> <?= $profile->last_name?></h2>
                     <div class="btn-group">
-                        <a href="#" class="btn btn-info"> Edit Public Info </a> <!-- link to edit profile page "Anss task"-->
-                        <a href="#" class="btn btn-primary"> Add/Join Clinic </a> <!-- link to clinics page "Ahmed nasr task"-->
+                        <a href="<?= DIRS::URL['patient-edit-profile'];?>" class="btn btn-info"> Edit Public Info </a> <!-- link to edit profile page "Anss task"-->
                     </div>
                 </div>
 
                 <div class="col-12 col-lg-12">
                     <ul class="list-group list-group-flush text-center"> <!-- From table user and profile -->
-                        <li class="list-group-item">@username</li>
-                        <li class="list-group-item">0101632993</li>
-                        <li class="list-group-item">21 sep 1997</li>
-                        <li class="list-group-item">male</li>
+                        <li class="list-group-item"><?=$profile->phone?></li>
+                        <li class="list-group-item"><?=$profile->birth_day?></li>
+                        <li class="list-group-item"><?php if($profile->gender): echo "male"; else: echo "female"; endif; ?></li>
                     </ul>
                 </div>
             </div>

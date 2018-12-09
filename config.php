@@ -20,11 +20,16 @@ class DIRS {
         'doctor-profile' => './dr.php?v=view',
         'doctor-edit-profile' => './dr.php?v=edit',
 
+<<<<<<< HEAD
+        'patient-profile' => './pat.php?v=view',
+        'patient-edit-profile' => './pat.php?v=edit',
+=======
         /**
          * Appointment Add - delete POST request urls
          */
         'appointment-book' => './appointment.php?action=add',
         'appointment-delete' => './appointment.php?action=delete'
+>>>>>>> f34f4cdc1ba8f6a383f8cb527270fa8dc7ddc596
     ];
 
     public const PATH = [
@@ -55,7 +60,10 @@ class DIRS {
         /** Dr profile */
         'static-imgs-dr-avatar' => './static/imgs/dr-avatar.jpg',
         'views-dr-profile' => './views/doctor-profile/dr-profile.view.php',
-        'views-dr-edit-profile' => './views/doctor-profile/edit-profile.view.php',
+
+
+        /** Edit Profiles */
+        'views-edit-profile' => './views/edit-profile/edit-profile.view.php',
 
         /** Patient Profile */
         'views-patient-profile' => './views/patient-profile/pat-profile.view.php',
@@ -77,10 +85,17 @@ class DIRS {
         'models-DB'=>'./models/db.model.php',
         'models-user' => './models/user.model.php',
         'models-profile' => './models/profile.model.php',
+<<<<<<< HEAD
+//<<<<<<< HEAD
+//=======
+        'models-dr-clinic-rel' => './models/dr-clinic-rel.model.php',
+//>>>>>>> 1ea6174adac889d7d1e03691371cbddd24404e6a
+=======
         'models-dr-clinic-rel' => './models/dr-clinic-rel.model.php',
         'models-appointment' => './models/appintment.model.php',
         'models-clinic' => './models/clinic.model.php',
 
+>>>>>>> f34f4cdc1ba8f6a383f8cb527270fa8dc7ddc596
 
     ];
 

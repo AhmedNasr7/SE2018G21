@@ -11,7 +11,17 @@
     <div class="card border-0">
         <div class="card-body">
             <h5 class="card-title">Public Profile</h5>
-            <h6 class="card-subtitle mb-2 text-muted">This account treats as a Doctor account</h6>
+            <?php 
+            if($_SESSION['loggedinUser']->acc_type == 1){
+            ?>
+                <h6 class="card-subtitle mb-2 text-muted">This account treats as a Doctor account</h6>
+            <?php
+            }elseif ($_SESSION['loggedinUser']->acc_type == 0) {
+            ?>
+                <h6 class="card-subtitle mb-2 text-muted">This account treats as a Patient account</h6>
+            <?php
+            }
+            ?>
         </div>
     </div>
     
@@ -41,13 +51,18 @@
                         <option value="0">Female</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label class="card-title">Major</label> <!-- majors table -->
-                    <select name="dr_major" class="form-control" required>
-                        <option value="0">طبيب بتنجان</option> <!-- Values = major id -->
-                        <option value="1">طبيب عيون</option>
-                    </select>
-                </div>
+                <?php 
+                if($_SESSION['loggedinUser']->acc_type == 1):
+                ?>
+                    <div class="form-group">
+                        <label class="card-title">Major</label> <!-- majors table -->
+                        <select name="dr_major" class="form-control">
+                            <option value="0">طبيب بتنجان</option> <!-- Values = major id -->
+                            <option value="1">طبيب عيون</option>
+                        </select>
+                    </div>
+                <?php
+                endif;?>
                 <button type="submit" class="btn btn-info btn-block">Save</button>
             </form>
         </div>
