@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD']=='POST' && $page != 'view'){
         Appointment::removeById($_POST['id']);
         header('Location:'.DIRS::URL['doctor-profile'].'&drid='.$_POST['dr_id']);
     else:
-
+        
     endif;
 
 } else {

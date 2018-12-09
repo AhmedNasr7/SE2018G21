@@ -63,7 +63,12 @@ class DIRS {
         'static-css-pat-profile' => './static/css/patient-profile/pat.css',
         'static-imgs-pat-avatar' => './static/imgs/pat-avatar.png',
         'static-imgs-clinic-logo' => './static/imgs/clinic-logo.png',
-
+        
+        /**
+         * Clinic Profile
+         */
+        'views-clinic-profile' => './views/clinic-profile/clinic-profile-view.php',
+        
 
 
         /**
