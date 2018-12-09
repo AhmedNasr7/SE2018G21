@@ -6,7 +6,12 @@
                 <h1 class="display-1">HELTH-TECH</h1>
             </div>
             <div class="search px-5 my-5">
-                <input type="text" name="search-phrase" id="home-search-field" class="form-control" placeholder="search" disabled>
+
+            <div class="btn-group">
+                <a class="btn btn-outline-light" href="<?= DIRS::URL['clinic-list'] ?>">Discover All Clinics</a>
+                <a class="btn btn-outline-light" href="#">or Search</a>
+            </div>
+
             </div>
         </div>
     </section>
@@ -34,9 +39,7 @@
                         <small>or</small>
                         <a class="card-title" id="login-form-toggler" data-toggle="collapse" href="#login-form" role="button" aria-expanded="false" aria-controls="login-form">Login</a>
                     </h5>
-
-                    <small class="text-muted" style="font-size: 0.7em;">username: se2018g21 password: se2018g21</small>
-
+                    
                     <?php
                         if(isset($_SESSION['Error-login'])):
                     ?>

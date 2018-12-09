@@ -27,7 +27,17 @@ class DIRS {
          * Appointment Add - delete POST request urls
          */
         'appointment-book' => './appointment.php?action=add',
-        'appointment-delete' => './appointment.php?action=delete'
+        'appointment-delete' => './appointment.php?action=delete',
+
+        /**
+         * Clinic Add Delete View
+         */
+        'clinic-profile'    =>'./clinic.php?action=view',
+        'clinic-list'    =>'./clinic.php?action=list',
+        'clinic-create'     =>'./clinic.php?action=add',
+        'clinic-join'       =>'./clinic.php?action=join',
+        'clinic-delete'     =>'./clinic.php?action=delete',
+        
     ];
 
     public const PATH = [
@@ -74,6 +84,7 @@ class DIRS {
          * Clinic Profile
          */
         'views-clinic-profile' => './views/clinic-profile/clinic-profile-view.php',
+        'views-clinic-list' => './views/clinic-profile/clinic-list-view.php',
         
 
 

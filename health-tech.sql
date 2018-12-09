@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 25, 2018 at 11:24 PM
+-- Generation Time: Dec 09, 2018 at 06:28 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -36,6 +36,16 @@ CREATE TABLE `appointments` (
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `appointments`
+--
+
+INSERT INTO `appointments` (`id`, `pat_id`, `dr_id`, `clinic_id`, `date`) VALUES
+(1, 1, 2, 1, '2018-11-09'),
+(2, 1, 2, 2, '2018-12-29'),
+(4, 1, 2, 1, '2018-12-27'),
+(7, 1, 2, 1, '2018-12-07');
+
 -- --------------------------------------------------------
 
 --
@@ -45,10 +55,22 @@ CREATE TABLE `appointments` (
 CREATE TABLE `clinics` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
   `phone` int(12) NOT NULL,
-  `drs_id` int(11) NOT NULL,
   `address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `clinics`
+--
+
+INSERT INTO `clinics` (`id`, `name`, `description`, `phone`, `address`) VALUES
+(1, '3yada', 'desciption of blaaa', 0, 'bla bla la'),
+(2, '3yada 2', 'description of 3yada 2\r\n', 0, 'lllllllllmmmmmmm\r\n'),
+(3, '3yada 3', 'desc 3', 316497, 'address 3'),
+(4, '3yada 4', 'desc 4', 1122334455, 'address 4'),
+(5, '3yada 5', 'desc 5', 2030, 'address 5'),
+(7, '3yada 6', 'desc 6', 54545, 'address 6');
 
 -- --------------------------------------------------------
 
@@ -61,6 +83,19 @@ CREATE TABLE `drs_clinics_rel` (
   `dr_id` int(11) NOT NULL,
   `clinic_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `drs_clinics_rel`
+--
+
+INSERT INTO `drs_clinics_rel` (`id`, `dr_id`, `clinic_id`) VALUES
+(1, 2, 1),
+(2, 2, 2),
+(3, 5, 3),
+(4, 5, 4),
+(5, 5, 5),
+(7, 5, 7),
+(8, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -118,7 +153,8 @@ CREATE TABLE `profile` (
 
 INSERT INTO `profile` (`id`, `first_name`, `last_name`, `address`, `phone`, `birth_day`, `gender`, `user_id`, `dr_major`) VALUES
 (2, 'Anss', 'khaled', 'blablabla', 1122334455, '2018-11-07', 1, 1, NULL),
-(3, 'akram', 'gnainy', 'lalalalalalelelelele', 1122334455, '2018-11-15', 1, 2, NULL);
+(3, 'akram', 'gnainy q', 'mmmmmmmmmmm', 1122334455, '0000-00-00', 1, 2, NULL),
+(7, 'A', 'K', 'AK st', 316497, '0000-00-00', 1, 5, NULL);
 
 -- --------------------------------------------------------
 
@@ -141,7 +177,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `usermail`, `password`, `acc_type`) VALUES
 (1, 'anssk', 'anss.khaled00@gmail.com', 'e8e7a25a5ec2bf98f1ca9eec1b19305baf5f9a39', 0),
 (2, 'akrom', 'akrom@akrom.com', '31660d49f39602f78bcdc1d024e2a85d27437f50', 1),
-(5, 'anos', 'anos@anos.com', 'passasasa', 1),
+(5, 'anos', 'anos@anos.com', 'e8e7a25a5ec2bf98f1ca9eec1b19305baf5f9a39', 1),
 (8, 'se2018g21', 'se2018g21@se.com', '7c196b1efc163950b7d7a6b582e74986c5fd4009', 0);
 
 --
@@ -209,19 +245,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `clinics`
 --
 ALTER TABLE `clinics`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `drs_clinics_rel`
 --
 ALTER TABLE `drs_clinics_rel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `majors`
@@ -239,7 +275,7 @@ ALTER TABLE `pat_history`
 -- AUTO_INCREMENT for table `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
