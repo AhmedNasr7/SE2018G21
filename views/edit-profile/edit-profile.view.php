@@ -51,7 +51,6 @@
                         <option value="0">Female</option>
                     </select>
                 </div>
-<<<<<<< HEAD:views/edit-profile/edit-profile.view.php
                 <?php 
                 if($_SESSION['loggedinUser']->acc_type == 1):
                 ?>
@@ -64,15 +63,6 @@
                     </div>
                 <?php
                 endif;?>
-=======
-                <div class="form-group">
-                    <label class="card-title">Major</label> <!-- majors table -->
-                    <select name="dr_major" class="form-control" required>
-                        <option value="0">طبيب بتنجان</option> <!-- Values = major id -->
-                        <option value="1">طبيب عيون</option>
-                    </select>
-                </div>
->>>>>>> f34f4cdc1ba8f6a383f8cb527270fa8dc7ddc596:views/doctor-profile/edit-profile.view.php
                 <button type="submit" class="btn btn-info btn-block">Save</button>
             </form>
         </div>
