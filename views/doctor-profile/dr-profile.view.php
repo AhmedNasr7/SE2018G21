@@ -55,71 +55,22 @@
             </div>
         </div>
         
+        <?php
+            foreach($drAppointments as $appointment):
+        ?>
+
         <div class="card my-2">
             <div class="card-body">
-                <a href="#" ><h5 class="card-title">10 oct 2020 | 03:30AM</h5></a> <!-- link to appointment views for this appointment -->
-                <h6 class="card-subtitle mb-2 text-muted">Patient: <a href="#">ahmed nasr</a></h6> <!-- link to this patient profile -->
-                <a href="#" class="card-link">Mark as Done</a> <!-- future function ajax to set appointment as done -->
+                <a href="#" ><h5 class="card-title"><?= $appointment['date'] ?></h5></a> <!-- link to appointment views for this appointment -->
+                <h6 class="card-subtitle mb-2 text-muted">Patient: <a href="#"><?php $pat = new User($appointment['pat_id']); echo $pat->username?></a></h6> <!-- link to this patient profile -->
                 <a href="#" class="card-link">Write Prescription</a> <!-- link to prescription of ""this patient"" -->
             </div>
         </div>
 
-        <div class="card my-2">
-            <div class="card-body">
-                <h5 class="card-title">10 oct 2020 | 03:30AM</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Patient: <a href="#">ahmed nasr</a></h6>
-                <a href="#" class="card-link">Mark as Done</a>
-                <a href="#" class="card-link">Write Prescription</a>
-            </div>
-        </div>
+        <?php
+            endforeach;
+        ?>
 
-        <div class="card my-2">
-            <div class="card-body">
-                <h5 class="card-title">10 oct 2020 | 03:30AM</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Patient: <a href="#">ahmed nasr</a></h6>
-                <a href="#" class="card-link">Mark as Done</a>
-                <a href="#" class="card-link">Write Prescription</a>
-            </div>
-        </div>
-
-        <div class="card my-2">
-            <div class="card-body">
-                <h5 class="card-title">10 oct 2020 | 03:30AM</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Patient: <a href="#">ahmed nasr</a></h6>
-                <a href="#" class="card-link">Mark as Done</a>
-                <a href="#" class="card-link">Write Prescription</a>
-            </div>
-        </div>
-
-        <div class="card my-2">
-            <div class="card-body">
-                <h5 class="card-title">10 oct 2020 | 03:30AM</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Patient: <a href="#">ahmed nasr</a></h6>
-                <a href="#" class="card-link">Mark as Done</a>
-                <a href="#" class="card-link">Write Prescription</a>
-            </div>
-        </div>
-
-
-        <div class="card my-2">
-            <div class="card-body">
-                <h5 class="card-title">10 oct 2020 | 03:30AM</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Patient: <a href="#">ahmed nasr</a></h6>
-                <a href="#" class="card-link">Mark as Done</a>
-                <a href="#" class="card-link">Write Prescription</a>
-            </div>
-        </div>
-
-
-        <div class="card my-2">
-            <div class="card-body">
-                <h5 class="card-title">10 oct 2020 | 03:30AM</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Patient: <a href="#">ahmed nasr</a></h6>
-                <a href="#" class="card-link">Mark as Done</a>
-                <a href="#" class="card-link">Write Prescription</a>
-            </div>
-        </div>
-        
     </section>
 
 </div>
