@@ -10,7 +10,7 @@
                     <h2><small>Dr-</small><?= $profile->first_name . " " . $profile->last_name  ?></h2>
                     
                     <?php
-                        if(isset($_SESSION['loggedinUser']) && $_SESSION['loggedinUser']->acc_type == 1 && $_SESSION['loggedinUser']->id == $_GET['drid'] ):
+                        if(isset($_SESSION['loggedinUser']) && $_SESSION['loggedinUser']->acc_type == 1 && $_SESSION['loggedinUser']->id == $drid ):
                     ?>
                     <div class="btn-group">
                         <a href="./dr.php?v=edit" class="btn btn-info"> Edit Public Info </a> <!-- link to edit profile page "Anss task"-->

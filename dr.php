@@ -45,19 +45,21 @@ else :
         // echo "No such doctor with this";
         if($_SESSION['loggedinUser']->acc_type == 1){
             $drid = $_SESSION['loggedinUser']->id;
+            var_dump($_SESSION['loggedinUser']);
         }else {
             header('Location:' . DIRS::URL['patient-profile'].'&pat_id='.$_SESSION['loggedinUser']->id);
         }
     }else{
         $drid = $_GET['drid'];
     }
+
     $dr = new User($drid);
     
     if($dr->acc_type == 0){
         /**
          * Error meesage with no doctor with this ID
          */
-        header('Location:'.DIRS::URL['home-page']);
+        // header('Location:'.DIRS::URL['home-page']);
     }
 
     $profile = Profile::getByUserId($dr->id);
