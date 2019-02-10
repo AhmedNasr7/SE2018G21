@@ -40,36 +40,43 @@ if($page == 'edit'):
 else :
     /** else $page == view */
 
+    $drid;
     if(!isset($_GET['drid'])){
-        echo "No such doctor with this";
+        // echo "No such doctor with this";
+        if($_SESSION['loggedinUser']->acc_type == 1){
+            $drid = $_SESSION['loggedinUser']->id;
+        }else {
+            header('Location:' . DIRS::URL['patient-profile'].'&pat_id='.$_SESSION['loggedinUser']->id);
+        }
     }else{
-
-        $dr = new User($_GET['drid']);
-
-        if($dr->acc_type == 0){
-            /**
-             * Error meesage with no doctor with this ID
-             */
-            header('Location:'.DIRS::URL['home-page']);
-        }
-
-        $profile = Profile::getByUserId($dr->id);
-
-        if(empty((array)$profile)){
-            header('Location:'.DIRS::URL['doctor-edit-profile']);
-        }
-    
-        $clinics_ids = DrToClinics::getClinicsOfDrs($dr->id);
-
-        $clinics = [];
-
-        foreach( $clinics_ids as $clinicID ){
-            array_push($clinics, DrToClinics::getClinicById($clinicID['clinic_id']) );
-        }
-
-        $drAppointments = Appointment::getByDrId($dr->id);
-    
-        require_once DIRS::PATH['views-dr-profile'];
+        $drid = $_GET['drid'];
     }
+    $dr = new User($drid);
+    
+    if($dr->acc_type == 0){
+        /**
+         * Error meesage with no doctor with this ID
+         */
+        header('Location:'.DIRS::URL['home-page']);
+    }
+
+    $profile = Profile::getByUserId($dr->id);
+
+    // if(empty((array)$profile)){
+    //     header('Location:'.DIRS::URL['doctor-edit-profile']);
+    // }
+
+    $clinics_ids = DrToClinics::getClinicsOfDrs($dr->id);
+
+    $clinics = [];
+
+    foreach( $clinics_ids as $clinicID ){
+        array_push($clinics, DrToClinics::getClinicById($clinicID['clinic_id']) );
+    }
+
+    $drAppointments = Appointment::getByDrId($dr->id);
+
+    require_once DIRS::PATH['views-dr-profile'];
+
 
 endif;

@@ -27,20 +27,23 @@ if($page == 'edit'):
 
 else :
     /** else $page == view */
+    $pat_id;
 
     if(!isset($_GET['pat_id'])){
         echo "Invalid Profile";
-    }else{
-
-        $user = new User($_GET['pat_id']);
-
-        if($user->acc_type == 1){
-            header('Location:'.DIRS::URL['home-page']);
-        }
-
-        $profile = Profile::getByUserId($user->id);
-        require_once DIRS::PATH['views-patient-profile'];
+        $pat_id = $_SESSION['loggedinUser']->id;
+    }else {
+        $pat_id = $_GET['pat_id'];
     }
+
+    $user = new User($pat_id);
+
+    if($user->acc_type == 1){
+        header('Location:'.DIRS::URL['home-page']);
+    }
+
+    $profile = Profile::getByUserId($user->id);
+    require_once DIRS::PATH['views-patient-profile'];
 
 endif;
 
