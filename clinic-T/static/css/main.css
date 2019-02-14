@@ -1,0 +1,28 @@
+
+.vh-100 {
+    height: 100vh;
+}
+
+.vw-100{
+    width: 100vw;
+}
+
+
+.v-center{
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 
+    HOME PAGE
+*/
+
+#HOME-PAGE {
+    background: lightblue url("../imgs/home-background.jpg") no-repeat fixed center; 
+    background-size: cover;
+}
+
+#SEARCH-AREA div:first-child {
+    left: 0;
+    right: 0;
+}

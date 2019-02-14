@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="UTF-8">
+ 	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	 <title>form for adding clinic </title>
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="mystyle.css">
+
+</head>
+<body>
+
+	<div class="alert alert-light" role="alert">
+
+
+
+ 		<div id="signup-form" class="collapse show">
+         	  <form action="./signup-login.php" method="POST">
+                     <input type="hidden" name="type" value="creat-clinic">
+                     		<div class="form-group">
+                                <label for="name">name of clinic</label>
+                                <input name="neme" type="text" class="form-control shadow-sm bg-white border-0" id="name-of-clinic" aria-describedby="emailHelp" placeholder="Enter name of clinic">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email of clinic</label>
+                                <input name="email" type="email" class="form-control shadow-sm bg-white border-0" id="email-of-clinic" aria-describedby="emailHelp" placeholder="Enter email of clinic">
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address of clinic</label>
+                                <input name="address" type="text" class="form-control shadow-sm bg-white border-0" id="Address-of-clinic" aria-describedby="emailHelp" placeholder="Enter Address">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">phone number of clinc</label>
+                                <input name="phone" type="text" class="form-control shadow-sm bg-white border-0" id="phone-of-clinic" placeholder="telphone number">
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+               </form>
+         </div>
+     </div>  
+
+        
+         	
+</body>
+</html>

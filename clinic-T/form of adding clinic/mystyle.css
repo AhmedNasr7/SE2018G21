@@ -1,0 +1,27 @@
+.form-group {
+
+	 width: 300px;
+	 margin: 25px;
+	
+}
+.custom-file{
+	width: 300px;
+	margin: 25px;
+}
+.btn{
+	margin: 25px;
+	width: 300px;
+}
+body
+{
+	background-image: url("home-background.jpg");
+	background-color: #DDDD;
+}
+.alert
+{
+	margin: 25px;
+	width: 400px;
+}
+label {
+	color: black;
+}
