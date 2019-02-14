@@ -18,8 +18,11 @@
 */
 
 #HOME-PAGE {
-    background: lightblue url("../imgs/home-background.jpg") no-repeat fixed center; 
+    background: lightblue url("../imgs/home-background.jpg"); 
     background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #SEARCH-AREA div:first-child {
