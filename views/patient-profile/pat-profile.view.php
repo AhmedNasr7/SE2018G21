@@ -55,61 +55,70 @@
                         <div class="card border-0">
                             <div class="card-body">
                                 <h5 class="card-title">Next Appointments</h5> <!-- from appointments table -->
-                                <h6 class="card-subtitle mb-2 text-muted">All Appointments will marked as done automatically after passing it's date </h6>
-                                <div class="btn btn-info">Make appointment</div> <!-- link to making appointment "Nasr task" -->
+                                <!--h6 class="card-subtitle mb-2 text-muted">All Appointments will marked as done automatically after passing it's date </h6-->
+                                <!--div class="btn btn-info">Make appointment</div--> <!-- link to making appointment "Nasr task" -->
                             </div>
                         </div>
-                                            
                         <div class="card my-2">
-                            <div class="card-body">
-                                <a href="#" ><h5 class="card-title">10 oct 2020 | 03:30AM</h5></a> <!-- link to appointment views for this appointment -->
-                                <h6 class="card-subtitle mb-2 text-muted">Clinic: <a href="#">Cleopatra Clinic</a></h6>
+                        <div class="card-body">  
+                        <?php
+                            $uid=$profile->user_id;
+                            $ustmt = DB::runQuery("SELECT appointments.clinic_id, date, appointments.dr_id  FROM `appointments` WHERE pat_id = $uid");
+                            if($ustmt)
+                            {
+                                $udata = $ustmt->fetchAll(PDO::FETCH_ASSOC);
+                                if ($udata != false)
+                                {
+                                    foreach($udata as $uvalue):
+                                    $dstmt = DB::runQuery("SELECT first_name, last_name  FROM `profile` WHERE profile.user_id = $uvalue[dr_id]");
+                                    if($dstmt){
+                                    $ddata = $dstmt->fetch(PDO::FETCH_ASSOC);
+                                    }
+                                    $cstmt = DB::runQuery("SELECT name  FROM `clinics` WHERE clinics.id = $uvalue[clinic_id]");
+                                    if($cstmt){
+                                    $cdata = $cstmt->fetch(PDO::FETCH_ASSOC);
+                                    }
+
+                        ?>        
+                                    
+                        
+                                <h5 class="card-title">
+                                <?php 
+                                    echo $uvalue["date"];
+                                ?>
+                                </h5> <!-- link to appointment views for this appointment -->
+                                <h6 class="card-subtitle mb-2 text-muted">Clinic: <?php 
+                                if ($cdata != false){
+                                    echo $cdata["name"];
+                                }
+                                else{
+                                    echo "No clinic found";
+                                }
+                                ?>
+                                </h6>
                                 <!-- link to this clinic -->
-                                <h6 class="card-subtitle mb-2 text-muted">Doctor: <a href="#">ahmed nasr</a></h6> <!-- link to this patient profile -->
-                                <a href="#" class="card-link">Mark as Done</a> <!-- future function ajax to set appointment as done -->
-                                <a href="#" class="card-link">View Prescription</a> <!-- link to prescription of ""this patient"" -->
+                                <h6 class="card-subtitle mb-2 text-muted">Doctor: <?php
+                                if ($ddata != false){
+                                    echo $ddata["first_name"].$ddata["last_name"];
+                                }
+                                else{
+                                    echo "No doctor found";
+                                }
+                                 
+                                endforeach;
+                            }
+                            else{
+                                echo "no appointment found";
+                            }
+                            }
+                                ?>
+                                
+                                
+                                </h6>
+                                
                             </div>
                         </div>
 
-                        <div class="card my-2">
-                            <div class="card-body">
-                                <h5 class="card-title">10 oct 2020 | 03:30AM</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Clinic: <a href="#">Cleopatra Clinic</a></h6>
-                                <h6 class="card-subtitle mb-2 text-muted">Doctor: <a href="#">ahmed nasr</a></h6>
-                                <a href="#" class="card-link">Mark as Done</a>
-                                <a href="#" class="card-link">View Prescription</a>
-                            </div>
-                        </div>
-
-                        <div class="card my-2">
-                            <div class="card-body">
-                                <h5 class="card-title">10 oct 2020 | 03:30AM</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Clinic: <a href="#">Cleopatra Clinic</a></h6>
-                                <h6 class="card-subtitle mb-2 text-muted">Doctor: <a href="#">ahmed nasr</a></h6>
-                                <a href="#" class="card-link">Mark as Done</a>
-                                <a href="#" class="card-link">View Prescription</a>
-                            </div>
-                        </div>
-
-                        <div class="card my-2">
-                            <div class="card-body">
-                                <h5 class="card-title">10 oct 2020 | 03:30AM</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Clinic: <a href="#">Cleopatra Clinic</a></h6>
-                                <h6 class="card-subtitle mb-2 text-muted">Doctor: <a href="#">ahmed nasr</a></h6>
-                                <a href="#" class="card-link">Mark as Done</a>
-                                <a href="#" class="card-link">View Prescription</a>
-                            </div>
-                        </div>
-
-                        <div class="card my-2">
-                            <div class="card-body">
-                                <h5 class="card-title">10 oct 2020 | 03:30AM</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Clinic: <a href="#">Cleopatra Clinic</a></h6>
-                                <h6 class="card-subtitle mb-2 text-muted">Doctor: <a href="#">ahmed nasr</a></h6>
-                                <a href="#" class="card-link">Mark as Done</a>
-                                <a href="#" class="card-link">View Prescription</a>
-                            </div>
-                        </div>
 
                     </div>
                 </div>
