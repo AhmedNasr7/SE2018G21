@@ -8,14 +8,14 @@ body{
 }
 
 .navbar-toggler-iconr{
-  background-color: #708C87;
+  background-color: rgb(111, 143, 137);
 }
 
 
 .group_selection
 {
-      margin-left:50px;
-      margin-top: 100px;
+      margin-left:51px;
+      margin-top: 101px;
       width:700px;
 
 }
