@@ -18,7 +18,11 @@
           if(isset($_SESSION['loggedinUser'])):
         ?>
           <li class="nav-item">
-            <a class="nav-link" href="<?php if( $_SESSION['loggedinUser']->acc_type==1){ echo DIRS::URL['doctor-profile'].'&drid='.$_SESSION['loggedinUser']->id; } ?>">Profile</a>
+            <a class="nav-link" href="<?php if( $_SESSION['loggedinUser']->acc_type==1){
+               echo DIRS::URL['doctor-profile'].'&drid='.$_SESSION['loggedinUser']->id; 
+               } elseif( $_SESSION['loggedinUser']->acc_type==0){
+                  echo DIRS::URL['patient-profile'].'&patid='.$_SESSION['loggedinUser']->id;
+                   }?>">Profile</a>
           </li>
           <li class="nav-item">
             <form action="./signup-login.php" method="POST" class="d-inline">
