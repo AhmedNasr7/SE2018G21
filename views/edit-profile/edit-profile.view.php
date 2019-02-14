@@ -92,13 +92,7 @@
                     </select>
                 </div>
                
-                    <div class="form-group">
-                        <label class="card-title">Major</label> <!-- majors table -->
-                        <select name="dr_major" class="form-control">
-                            <option value="0">طبيب بتنجان</option> <!-- Values = major id -->
-                            <option value="1">طبيب عيون</option>
-                        </select>
-                    </div>
+                    
                 <?php
                 endif;?>
                 <button type="submit" class="btn btn-info btn-block">Save</button>
