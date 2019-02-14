@@ -1,5 +1,6 @@
 # SE2018G21
 
+
 ## Healtch care systemm (Health-Tech)
 
 Health-tech is a complete health care platform built to make it easy, smart and efficient
@@ -10,6 +11,8 @@ medicines from pharmacies as they got their prescriptions online.
 For Doctors, they can follow up with their patients, looking carefully at their medical
 history or their previous records and write prescriptions online directly to the patient
 profile.
+
+
 
 ## Team Members:
 
@@ -22,6 +25,9 @@ profile.
 7. Tarek Khaled Seddiq                Section 2
 8. Tarek Mohamed Hussein              Section 2
 
+
+
+
 ## System Description
 
-Our platform has several interconnected components. Firstly, the **Profile management system** which manages the website profiles, Doctor profiles and Patient Profiles, there's also the **clinics creation and management system**, allowing Drs to create their clinic pages and manage it. the third component is **Appointments reservation system** enabling patients to search for clinics and doctors and reserve appointments with them. Finally,  we have **Medical history & records system and the Prescription system**, Doctors can easily write their prescription to Patients and can also retrieve all their medical history in a blink of eye.
+Our platform has several interconnected components. Firstly, the **Profile management system** which manages the website profiles, Doctor profiles and Patient Profiles, there's also the **clinics creation and management system**, allowing Drs to create their clinic pages and manage it. the third component is **Appointments reservation system** enabling patients to search for clinics and doctors and reserve appointments with them. Finally,  we have **Medical history & records system and the Prescription system**, Doctors can easily write their prescription to Patients and can also retrieve all their medical history in a blink of an eye.
