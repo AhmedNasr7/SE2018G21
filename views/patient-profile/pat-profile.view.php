@@ -129,17 +129,29 @@
                <!--to get the medical history of the patient by his id-->                  
             <?php
             $id=$profile->user_id;
-            $stmt = DB::runQuery("SELECT description FROM `pat_history` WHERE pat_id = $id");
+            $stmt = DB::runQuery("SELECT description, date, pat_history.dr_id  FROM `pat_history` WHERE pat_id = $id");
             if($stmt){
-                $data = $stmt->fetch(PDO::FETCH_ASSOC);
-            }else {
-                throw new Exception("Item not found");
+                $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                if ($data != false)
+                {
+                    ?>
+                    <h5 class="pl-5">
+                    <?php
+                foreach( $data as $value) :
+                echo $value["description"]."<br/>" ;
+                endforeach;
+                }
+                else
+                {
+                    echo"Item not found";
+                }
             }
-            ?>
-                <?php
-                        foreach( $data as $value) 
-                          ?>
-            <h5 class="pl-5"> <?php echo $value ;?></h5>    
+                 ?>
+                 </h5> 
+            
+                
+                
+                           
         </div>
         <!--******************************************************************-->
     </section>
