@@ -40,6 +40,8 @@ elseif($_SERVER['REQUEST_METHOD']=='POST' && $_POST['type']=='signup'):
 
             $user->saveToDb();
 
+            Profile::create('','','','','','',$user->id,null);
+
             $_SESSION['loggedinUser'] = $user;
             header('Location:'.DIRS::URL['home-page']);
 
