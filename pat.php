@@ -33,7 +33,6 @@ else :
     $pat_id;
 
     if(!isset($_GET['pat_id'])){    
-        echo "Invalid Profile";
         $pat_id = $_SESSION['loggedinUser']->id;
     }else {
         $pat_id = $_GET['pat_id'];
