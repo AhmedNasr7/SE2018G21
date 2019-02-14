@@ -9,14 +9,18 @@
                         <img class="w-25 my-5 mx-auto d-block shadow-sm rounded-circle" src="<?= DIRS::PATH['static-imgs-pat-avatar'] ?>" alt="Dr-Avatar">
                     </div>
                     <h2><small>Patient-</small><?=$profile->first_name?> <?= $profile->last_name?></h2>
+                    <!--to check for the login before showing the page-->
                     <?php
+                        if ( isset( $_SESSION['loggedinUser'] ) ){
+                            //******************************************//
                         if(($profile->user_id)==($_SESSION['loggedinUser']->id)):
                     ?>
                         <div class="btn-group">
                             <a href="<?= DIRS::URL['patient-edit-profile'];?>" class="btn btn-info"> Edit Public Info </a> <!-- link to edit profile page "Anss task"-->
                         </div>
                     <?php
-                    endif?>
+                    endif;
+                        }?>
                 </div>
 
                 <div class="col-12 col-lg-12">
@@ -114,72 +118,30 @@
 
         <div class="card border-0">
             <div class="card-body text-center">
-                <h2><small>Patient Name-</small>History</h2>
+                <h3>History</h3>
             </div>
         </div>
-                            
+        <!--***********************************************************-->
         <div class="card my-2 p-4 m-2">
             <div class="media">
-                <img class="mr-3" src="<?= DIRS::PATH['static-imgs-clinic-logo'];?>" alt="Generic placeholder image">
-                <div class="media-body">
-                    <ul class="list-group list-group-flush text-left"> <!-- From table user and profile -->
-                            <li class="list-group-item">
-                            <h5 class="card-subtitle mb-2 text-muted">Clinic: <a href="#">Cleopatra Clinic</a></h5><!-- link to this clinic --></li>
-                            <li class="list-group-item">
-                            <h6 class="card-title mb-2 text-muted">Date: <a href="#">10 oct 2020 | 03:30AM</a></h6></li>
-                            <li class="list-group-item">
-                            <h6 class="card-subtitle mb-2 text-muted">Doctor: <a href="#">ahmed nasr</a></h6> <!-- link to this Doctor profile --></li>
-                            <li class="list-group-item">
-                            <h6 class="card-subtitle mb-2 text-muted">Patient: <a href="#">nasr ahmed</a></h6> <!-- link to this patient profile --></li>
-                    </ul>
-                </div>
-            </div><hr>
-            <h4 class="card-subtitle mb-2 text-muted pt-4 pl-1">Discription:</a></h4>
-            <h5 class="pl-5">this is discription of prescription</h5>
+                <h4 class="card-subtitle mb-2 text-muted pt-4 pl-1">Medical History</h4>
+            </div>
+               <!--to get the medical history of the patient by his id-->                  
+            <?php
+            $id=$profile->user_id;
+            $stmt = DB::runQuery("SELECT description FROM `pat_history` WHERE pat_id = $id");
+            if($stmt){
+                $data = $stmt->fetch(PDO::FETCH_ASSOC);
+            }else {
+                throw new Exception("Item not found");
+            }
+            ?>
+                <?php
+                        foreach( $data as $value) 
+                          ?>
+            <h5 class="pl-5"> <?php echo $value ;?></h5>    
         </div>
-
-        <div class="card my-2 p-4 m-2">
-            <div class="media">
-                <img class="mr-3" src="<?= DIRS::PATH['static-imgs-clinic-logo'];?>" alt="Generic placeholder image">
-                <div class="media-body">
-                    <ul class="list-group list-group-flush text-left"> <!-- From table user and profile -->
-                            <li class="list-group-item">
-                            <h5 class="card-subtitle mb-2 text-muted">Clinic: <a href="#">Cleopatra Clinic</a></h5><!-- link to this clinic --></li>
-                            <li class="list-group-item">
-                            <h6 class="card-title mb-2 text-muted">Date: <a href="#">10 oct 2020 | 03:30AM</a></h6></li>
-                            <li class="list-group-item">
-                            <h6 class="card-subtitle mb-2 text-muted">Doctor: <a href="#">ahmed nasr</a></h6> <!-- link to this Doctor profile --></li>
-                            <li class="list-group-item">
-                            <h6 class="card-subtitle mb-2 text-muted">Patient: <a href="#">nasr ahmed</a></h6> <!-- link to this patient profile --></li>
-                    </ul>
-                </div>
-            </div><hr>
-            <h4 class="card-subtitle mb-2 text-muted pt-4 pl-1">Discription:</a></h4>
-            <h5 class="pl-5">this is discription of prescription</h5>
-        </div>
-
-
-        <div class="card my-2 p-4 m-2">
-            <div class="media">
-                <img class="mr-3" src="<?= DIRS::PATH['static-imgs-clinic-logo'];?>" alt="Generic placeholder image">
-                <div class="media-body">
-                    <ul class="list-group list-group-flush text-left"> <!-- From table user and profile -->
-                            <li class="list-group-item">
-                            <h5 class="card-subtitle mb-2 text-muted">Clinic: <a href="#">Cleopatra Clinic</a></h5><!-- link to this clinic --></li>
-                            <li class="list-group-item">
-                            <h6 class="card-title mb-2 text-muted">Date: <a href="#">10 oct 2020 | 03:30AM</a></h6></li>
-                            <li class="list-group-item">
-                            <h6 class="card-subtitle mb-2 text-muted">Doctor: <a href="#">ahmed nasr</a></h6> <!-- link to this Doctor profile --></li>
-                            <li class="list-group-item">
-                            <h6 class="card-subtitle mb-2 text-muted">Patient: <a href="#">nasr ahmed</a></h6> <!-- link to this patient profile --></li>
-                    </ul>
-                </div>
-            </div><hr>
-            <h4 class="card-subtitle mb-2 text-muted pt-4 pl-1">Discription:</a></h4>
-            <h5 class="pl-5">this is discription of prescription</h5>
-        </div>
-
-
+        <!--******************************************************************-->
     </section>
 </div>
 </div>

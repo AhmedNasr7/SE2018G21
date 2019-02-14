@@ -29,7 +29,7 @@ else :
     /** else $page == view */
     $pat_id;
 
-    if(!isset($_GET['pat_id'])){
+    if(!isset($_GET['pat_id'])){    
         echo "Invalid Profile";
         $pat_id = $_SESSION['loggedinUser']->id;
     }else {
@@ -50,3 +50,15 @@ endif;
 
 
 require_once DIRS::PATH['views-layout-footer'];
+
+
+
+//function to send query to data-base
+function send_query($que)
+{
+
+        global $connection;
+        $query = $que;
+        $result = mysqli_query($connection,$query);
+        return $result;
+}
