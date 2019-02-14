@@ -7,12 +7,13 @@ body{
     margin-top: 51px;
     margin-left: 26px;
     font-size: 16px;
-
-  
+    background-attachment: fixed;
+    background-repeat: no-repeat ;
+    overflow-x: hidden;
 }
 
 .navbar-toggler-iconr{
-  background-color: rgb(111, 143, 137);
+  background-color: rgb(114, 141, 136);
 }
 
 
@@ -38,8 +39,8 @@ body{
     margin-top: 25px;
     width:700px;
     margin-left: 40px;
-    margin-bottom: 25px;
+    margin-bottom: 25px;  
 }
-.btn{
-    margin: 10px;
+.btn {
+    margin: 11px;
 }
