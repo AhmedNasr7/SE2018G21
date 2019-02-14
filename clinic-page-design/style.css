@@ -1,9 +1,13 @@
+*  {
+    margin:  0 ; 
+    padding:  0 ;
+}
 body{   
     background-image: url("default.jpg");
+    margin-top: 51px;
+    margin-left: 26px;
+    font-size: 16px;
 
-   
-      margin-top: 50px;
-      margin-left: 25px;
   
 }
 
@@ -16,13 +20,13 @@ body{
 {
       margin-left:51px;
       margin-top: 101px;
-      width:700px;
+      width:701px;
 
 }
 
 .custom-select {
     border-radius: 8px;
-    height:60px; 
+    height:61px; 
     
     
 }
