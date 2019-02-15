@@ -47,6 +47,8 @@
     endif;
 ?>
 
+<a href="./make-appointment.php" class="btn btn-primary"> Make Appointment </a>
+
 <?php
     foreach($clinics as $clinic):
 ?>
@@ -85,7 +87,6 @@
                 <?php
                     elseif($_SESSION['loggedinUser']->acc_type == 0):
                 ?>
-                    <a href="#" class="btn btn-primary">Make Appointment</a>
                 <?php
                     endif;
                 ?>

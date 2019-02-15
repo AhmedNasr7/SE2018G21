@@ -10,7 +10,7 @@ if($page == 'edit'):
 
         if($_SERVER['REQUEST_METHOD']=='POST'){ /** Get Updated data from post request */
             $user = $_SESSION['loggedinUser']; /** Capture logged in user */
-            Profile::update($user->id , $_POST['first_name'],$_POST['last_name'],$_POST['address'],$_POST['phone'],null,$_POST['gender'],null);
+            Profile::update($user->id , $_POST['first_name'],$_POST['last_name'],$_POST['address'],$_POST['phone'],$_POST['birth_day'],$_POST['gender'],null);
             $_SESSION['success_updatet'] = true;
             header('Location:' . DIRS::URL['patient-profile'].'&patid='.$_SESSION['loggedinUser']->id);
         } 
