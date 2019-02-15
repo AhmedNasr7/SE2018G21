@@ -37,6 +37,21 @@ if($page == 'edit'):
         require_once DIRS::PATH['views-dr-edit-profile'];
 
     endif;
+    
+    esleif ($page =='list'):
+
+	$drs == DB::runQuery('SELECT users.id, users.usermail, profile.first_name , profile.last_name ')
+	if($drs->rowCount()>0){
+	    $drs = $drs->fetchAll();
+	}
+	else {
+
+	}
+	require_once './views/doctor-profile/doctor-list.view.php';
+
+
+
+
 else :
     /** else $page == view */
 
@@ -83,13 +98,3 @@ else :
 
 endif;
 
-esleif ($page =='list'):
-
-$drs == DB::runQuery('SELECT users.id, users.usermail, profile.first_name , profile.last_name ')
-if($drs->rowCount()>0){
-    $drs = $drs->fetchAll();
-}
-else {
-
-}
-require_once './views/doctor-profile/doctor-list.view.php';
