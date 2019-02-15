@@ -9,6 +9,7 @@
 
             <div class="btn-group">
                 <a class="btn btn-outline-light" href="<?= DIRS::URL['clinic-list'] ?>">Discover All Clinics</a>
+                <a class="btn btn-outline-light" href="./dr.php?v=list">Discover Registered Drs</a>
             </div>
 
             </div>
