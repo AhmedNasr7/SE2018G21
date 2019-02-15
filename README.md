@@ -31,3 +31,15 @@ profile.
 ## System Description
 
 Our platform has several interconnected components. Firstly, the **Profile management system** which manages the website profiles, Doctor profiles and Patient Profiles, there's also the **clinics creation and management system**, allowing Drs to create their clinic pages and manage it. the third component is **Appointments reservation system** enabling patients to search for clinics and doctors and reserve appointments with them. Finally,  we have **Medical history & records system and the Prescription system**, Doctors can easily write their prescription to Patients and can also retrieve all their medical history in a blink of an eye.
+
+## Documentations
+
+All required documents can be found in the repo.
+
+1. You can find Whitepaper [here] (https://github.com/AhmedNasr7/SE2018G21/blob/master/Documents/Whitepaper/SW2018G21%20White%20Paper.pdf).
+
+2. You can find BRD [here] (https://github.com/AhmedNasr7/SE2018G21/blob/master/Documents/BRD/SE%20Project%20BRD%20-%20G21%20.pdf).
+
+3. You can find SRS [here] (https://github.com/AhmedNasr7/SE2018G21/blob/master/Documents/SRS/SRS.pdf).
+
+
