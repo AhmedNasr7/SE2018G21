@@ -32,7 +32,7 @@ profile.
 
 Our platform has several interconnected components. Firstly, the **Profile management system** which manages the website profiles, Doctor profiles and Patient Profiles, there's also the **clinics creation and management system**, allowing Drs to create their clinic pages and manage it. the third component is **Appointments reservation system** enabling patients to search for clinics and doctors and reserve appointments with them. Finally,  we have **Medical history & records system and the Prescription system**, Doctors can easily write their prescription to Patients and can also retrieve all their medical history in a blink of an eye.
 
-## Documents
+### Documents
 
 All required documents can be found in the repo.
 
