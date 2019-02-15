@@ -78,26 +78,27 @@
                             </div>
                             <div class="form-group">
                                 <label for="sign-up-repassword">Confirm Password</label>
-                                <input name="repassword" type="password" class="form-control shadow-sm bg-white border-0" id="sign-up-repassword" placeholder="Re Password">
+                                <input name="repassword" type="password" class="form-control shadow-sm bg-white border-0" id="sign-up-repassword" placeholder="Retype Password">
                             </div>
 
                             <div class="form-check">
-                                <input class = "form-check-input" style ="margin: 0 10px 0 10px;" type="radio" name="acc_type" id = "drRadio" value="1">
+                                <input class = "form-check-input"  type="radio" name="acc_type" id = "drRadio" value="1">
                                 <label class = "form-check-label" for="drRadio">
                                     Doctor
                                  </label>
                             </div>
 
                             <div class="form-check">
-                                <input class = "form-check-input" style ="margin: 0 10px 0 10px;" type="radio" name="acc_type" id = "patRadio" value="0">
+                                <input class = "form-check-input" type="radio" name="acc_type" id = "patRadio" value="0">
                                 <label class = "form-check-label" for="patRadio">
                                     Patient
                                  </label>
                             </div>
 
-
+                            <div>
                             <button type="submit" class="btn btn-primary btn-block">Submit</button>
                         </form>
+                        </div>
                     </div>
 
                     <div id="login-form" class="collapse">
