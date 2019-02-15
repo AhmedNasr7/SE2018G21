@@ -33,14 +33,6 @@
         <?php
           else:
         ?> 
-
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Signup</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Login</a>
-          </li>
-
         <?php
           endif;
         ?>
