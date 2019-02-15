@@ -1,7 +1,7 @@
 # SE2018G21
 
 
-## Healtch Care System (Health-Tech)
+## Healtch Care System (Health-Tech):
 
 Health-tech is a complete health care platform built to make it easy, smart and efficient
 for doctors and patients.
