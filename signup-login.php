@@ -33,7 +33,7 @@ elseif($_SERVER['REQUEST_METHOD']=='POST' && $_POST['type']=='signup'):
 
         if(!$flag){
 
-            $acc_type = ($_POST['acc_type' == "1"])? 1: 0;
+            $acc_type = ($_POST['acc_type'] == "1")? 1: 0;
 
             $user->username = $_POST['username'];
             $user->usermail = $_POST['usermail'];
