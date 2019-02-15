@@ -33,10 +33,12 @@ elseif($_SERVER['REQUEST_METHOD']=='POST' && $_POST['type']=='signup'):
 
         if(!$flag){
 
+            $acc_type = ($_POST['acc_type' == 1])? 1: 0;
+
             $user->username = $_POST['username'];
             $user->usermail = $_POST['usermail'];
             $user->password = $hashedPass;
-            $user->acc_type = 0;
+            $user->acc_type = $acc_type;
 
             $user->saveToDb();
 
