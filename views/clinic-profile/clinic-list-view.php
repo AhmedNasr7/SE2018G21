@@ -47,7 +47,7 @@
     endif;
 ?>
 
-<a href="./make-appointment.php" class="btn btn-primary"> Make Appointment </a>
+<a href="./make-appointment.php" class="btn btn-primary mt-5"> Make Appointment </a>
 
 <?php
     foreach($clinics as $clinic):

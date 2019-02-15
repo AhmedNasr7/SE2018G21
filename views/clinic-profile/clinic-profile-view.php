@@ -31,11 +31,6 @@
                 <?php
                     endif;
                     ?>
-                    
-            <?php
-                elseif($_SESSION['loggedinUser']->acc_type == 0):
-            ?>
-                <a href="#" class="btn btn-primary">Make Appointment</a>
             <?php
                 endif;
             ?>
