@@ -36,10 +36,10 @@ Our platform has several interconnected components. Firstly, the **Profile manag
 
 All required documents can be found in the repo.
 
-1. You can find Whitepaper [here] (https://github.com/AhmedNasr7/SE2018G21/blob/master/Documents/Whitepaper/SW2018G21%20White%20Paper.pdf).
+1. You can find Whitepaper [here](https://github.com/AhmedNasr7/SE2018G21/blob/master/Documents/Whitepaper/SW2018G21%20White%20Paper.pdf).
 
-2. You can find BRD [here] (https://github.com/AhmedNasr7/SE2018G21/blob/master/Documents/BRD/SE%20Project%20BRD%20-%20G21%20.pdf).
+2. You can find BRD [here](https://github.com/AhmedNasr7/SE2018G21/blob/master/Documents/BRD/SE%20Project%20BRD%20-%20G21%20.pdf).
 
-3. You can find SRS [here] (https://github.com/AhmedNasr7/SE2018G21/blob/master/Documents/SRS/SRS.pdf).
+3. You can find SRS [here](https://github.com/AhmedNasr7/SE2018G21/blob/master/Documents/SRS/SRS.pdf).
 
 
