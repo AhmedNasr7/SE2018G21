@@ -3,7 +3,7 @@
     <section id="SEARCH-AREA" class="col-12 col-lg-8 text-center position-relative px-5">
         <div class="position-absolute v-center">
             <div class="logo my-5 text-white">
-                <h1 class="display-1">HELTH-TECH</h1>
+                <h1 class="display-1">HEALTH-TECH</h1>
             </div>
             <div class="search px-5 my-5">
 
@@ -77,9 +77,19 @@
                                 <input name="password" type="password" class="form-control shadow-sm bg-white border-0" id="sign-up-password" placeholder="Password">
                             </div>
                             <div class="form-group">
-                                <label for="sign-up-repassword">RePassword</label>
+                                <label for="sign-up-repassword">Confirm Password</label>
                                 <input name="repassword" type="password" class="form-control shadow-sm bg-white border-0" id="sign-up-repassword" placeholder="Re Password">
                             </div>
+
+                            <div class="form-group">
+                            <td align="left">
+                                <input style ="margin: 0 10px 0 10px;" type="radio" name="Patient" value="Patient" checked>Patient
+                                <input style ="margin: 0 10px 0 10px;"type="radio" name="Doctor" value="Doctor">Doctor
+                                </td>
+
+                            </div>
+
+
                             <button type="submit" class="btn btn-primary btn-block">Submit</button>
                         </form>
                     </div>
@@ -90,6 +100,8 @@
                             <div class="form-group">
                                 <label for="sign-up-username">Username</label>
                                 <input name="username" type="text" class="form-control shadow-sm bg-white border-0" id="sign-up-username" aria-describedby="emailHelp" placeholder="Enter username">
+                             
+ 
                             </div>
                             <div class="form-group">
                                 <label for="sign-up-password">Password</label>
