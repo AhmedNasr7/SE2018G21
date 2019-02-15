@@ -38,16 +38,15 @@ if($page == 'edit'):
 
     endif;
     
-    esleif ($page =='list'):
+elseif ($page =='list'):
 
-	$drs == DB::runQuery('SELECT users.id, users.usermail, profile.first_name , profile.last_name ')
-	if($drs->rowCount()>0){
-	    $drs = $drs->fetchAll();
-	}
-	else {
-
-	}
-	require_once './views/doctor-profile/doctor-list.view.php';
+    $drs = DB::runQuery('SELECT users.id, users.usermail, profile.first_name, profile.last_name FROM `profile`, `users` WHERE users.acc_type = 1 AND profile.user_id = users.id');
+    if($drs->rowCount()>0){
+        $drs = $drs->fetchAll();
+    }else{
+        
+    }
+    require_once './views/doctor-profile/doctor-list.view.php';
 
 
 
